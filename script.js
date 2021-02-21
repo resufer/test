@@ -18,7 +18,8 @@ window.onload = function () {
     }
     document.body.onkeypress = (e) => {
       if (e.keyCode === 32) {
-        ctx.globalCompositeOperation = 'destination-out';
+        ctx.beginPath();
+        ctx.clearRect(0, 0, document.documentElement.clientWidth, document.documentElement.clientHeight);
       }
     }
   }
