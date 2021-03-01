@@ -6,6 +6,7 @@ window.onload = function () {
     y.innerText = 'y:' + e.clientY;
   };
 
+  let colors = ['red', 'orange', 'gold', 'yellow', 'green', 'blue', 'purple', 'black']
 
   let startCanvas = function (e) {
     let canvas = document.getElementById('canvas');
@@ -22,6 +23,10 @@ window.onload = function () {
         ctx.clearRect(0, 0, document.documentElement.clientWidth, document.documentElement.clientHeight);
       }
     }
+
+    canvas.addEventListener('dblclick', () => {
+      ctx.strokeStyle = colors[Math.round(Math.random() * colors.length)];
+    })
   }
   document.body.onclick = (e) => startCanvas(e);
 };
